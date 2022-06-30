@@ -1,5 +1,5 @@
 # ExcelDivideAndRule
-Script to cut excel files too big
+Script to split Excel files that are too large
 
 
 Show help.
