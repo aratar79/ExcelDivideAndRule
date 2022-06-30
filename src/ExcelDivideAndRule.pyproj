@@ -11,6 +11,9 @@
     <OutputPath>.</OutputPath>
     <Name>ExcelDivideAndRule</Name>
     <RootNamespace>ExcelDivideAndRule</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>-f libro33.xlsx -s PRODUCTOS -p 5 -i 2</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
