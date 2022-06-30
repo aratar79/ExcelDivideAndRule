@@ -367,3 +367,5 @@ prueba_1/
 *.xlsx
 *.vs
 *.suo
+/.vs
+.vs/
