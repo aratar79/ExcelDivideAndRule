@@ -14,8 +14,23 @@ from tqdm import tqdm
 from tabulate import tabulate
 
 
+def exists_files(file_name):
+
+    files = [
+        filename
+        for filename in os.listdir(".")
+        if filename.startswith(f"{file_name}_output_")
+    ]
+    names = [os.path.splitext(base)[0] for base in files]
+    end_names = [name.split("_")[-1] for name in names]
+    nums = [int(num) for num in end_names if num.isdigit()]
+
+    return max(nums)
+
+
 def run_process(file_name, sheet_name, split_parts, init_row):
 
+    outfile_num = exists_files(file_name)
     head_rows = init_row - 1
     main_file = pd.read_excel(file_name, sheet_name)
     main_headers = main_file.keys()
@@ -32,7 +47,7 @@ def run_process(file_name, sheet_name, split_parts, init_row):
     for i in range(split_parts):
         new_file = pd.DataFrame(columns=range(len(headers)))
         new_file.columns = [head for head in headers]
-        name_file = f"{file_name}_output_{i}.xlsx"
+        name_file = f"{file_name}_output_{i + outfile_num}.xlsx"
         writer = pd.ExcelWriter(name_file, engine="xlsxwriter")
         books.append(name_file)
         new_file.to_excel(writer, sheet_name, index=False)
