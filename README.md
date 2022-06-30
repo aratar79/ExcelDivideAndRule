@@ -12,4 +12,4 @@ Usage
 # Compile to exe
 to compile to one exe file use pyintaller\
 Install the necessary dependencies\
-And use the command: <pre>pyinstaller  --onefile .\ExcelDivideAndRule.py<\pre>
+And use the command: <pre>pyinstaller  --onefile .\ExcelDivideAndRule.py
