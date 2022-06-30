@@ -369,3 +369,4 @@ prueba_1/
 *.suo
 /.vs
 .vs/
+*.sln
